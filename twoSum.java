@@ -7,17 +7,17 @@ class Solution {
         //declare an array called output of size 2, since we are returning an 2 indices
        int[] output = new int[2];
 
-       // formula : target = first_num (numbers[i]) + second_num
-       // loop through the array, and find if second_num is in the map
+       // formula : target = curr_num (numbers[i]) + y
+       // loop through the array, and find if y is in the map
        // if yes, return
-       // if no, add it to the map { second_num, index }
+       // if no, add it to the map { curr_num, index }
        for (int i = 0; i < numbers.length; i++) {
 
-            int second_num = target - numbers[i];
+            int y = target - numbers[i];
 
-        if (map.containsKey(second_num)) {
+        if (map.containsKey(y)) {
             output[1] = i;
-            output[0] = map.get(second_num);
+            output[0] = map.get(y);
             return output;
         }
 
